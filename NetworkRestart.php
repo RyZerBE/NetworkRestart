@@ -1,12 +1,12 @@
 <?php
 
 const STOP_SCRIPT = [
-    "screen -S RyZerCloud -X stuff 'stop\n'",
+    "screen -S RyZerCloud -X stuff 'group stop all\n'",
     "screen -S Bungee -X stuff 'end\n'",
 ];
 const RESTART_SCRIPT = [
-    "cd /root/RyzerCloud/ && screen -AmdS RyZerCloud java -jar RyZerCloud.jar",
-    "cd /root/Bungee/ && screen -AmdS Bungee java -jar Waterdog.jar",
+    "screen -S RyZerCloud -X stuff 'group start all\n'",
+    "cd /root/WaterdogPE/ && screen -AmdS Bungee java -jar WaterdogPE.jar",
 ];
 
 $restartTime = "04:00";
